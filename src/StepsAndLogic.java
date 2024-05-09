@@ -90,4 +90,28 @@ public class StepsAndLogic {
             } //outer for
         } //outer if
     }
+    //     -----This Whole Logic is only for Making the 1 in R2 & C2-----
+
+    static void interchange_R2_and_C2_by_R3_if_R3_have_1(double[][] matrix, int row, int column){
+        /* checking if  R2 & C2's 1st element is Not 1
+         * and the R3 & C2's 1st element is 1
+         * We're interchanging the R2 to R3 means R2's
+         * All elements replace with R3's all elements
+         * and R3's all elements replace with R2's all elements */
+        if(matrix[2][2] !=1){ //checking R2's 1st Element is not = 1
+            if (matrix[3][2] == 1){ // checking R3's 1st Element is = 1
+                int[][] temp = new int[row][column];
+                for (int i =1; i < row; i++){
+                    for (int j =1; j < column; j++){  //where N= the number Columns 1st col then 2nd...
+                        temp[i][j] = (int) matrix[2][j];   //Assigning R2 & CN value to temp array
+                        matrix[2][j] = matrix[3][j]; // Assigning R2 & CN value to R3 & CN
+                        matrix[3][j] = temp[i][j];   // Assigning Temp array values to R3 & CN
+                        /*Note Temp array now have R3 & CN values because we are first assigning
+                          the R3 & CN values to temp array */
+                    } //inner for
+                } //outer for
+            } // inner if
+        } //outer if
     }
+
+}
