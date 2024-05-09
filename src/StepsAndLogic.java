@@ -22,5 +22,19 @@ public class StepsAndLogic {
                 } //outer for
             } // inner if
         } //outer if
+    }    static void if_R1_1st_Element_is_Neg(double[][] matrix, int row, int column){
+        /* Checking the R1's 1st Element is Negative if it is negative then
+         * we have to multiply the whole row with (-1)
+         * The Logic is like this -- R1 (R1 x -1)                     */
+        if (matrix[1][1] < 0){ //checking the R1's First element is less than 0 means negative
+            for (int i = 1; i < row; i++) {
+                for (int j = 1; j < column; j++) {
+                    /* Multiplying R1 & CN to -1
+                     * Means we are multiplying R1 complete row with -1
+                     * where N= the number Columns 1st col then 2nd...   */
+                    matrix[1][j] = matrix[1][j] * -1;
+                } //inner for
+            } //outer for
+        } //outer if
     }
     }
