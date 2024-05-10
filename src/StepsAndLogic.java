@@ -289,5 +289,20 @@ public class StepsAndLogic {
             } //outer for
         } //outer if
     }
+    static void dividing_R3_full_Row_With_R3_C3(double[][] matrix){
+        /* Dividing the Full R3 with R3 / C3 to make it R3's 3rd element 0
+         * The Logic of This statement is like this R3 (1/N)
+         * Where N = the R3's 3rd element here */
+        if (matrix[3][3] !=1 && matrix[3][3]!=0){ //checking R3 & C3 is not 1 and 0
+            //Assigning R3 & C4 to <R3 (1/N)>
+            matrix[3][4] = matrix[3][4]/matrix[3][3];
+            //Assigning R3 & C1 to <R3 (1/N)>
+            matrix[3][1] = matrix[3][1]/matrix[3][3];
+            //Assigning R3 & C2 to <R3 (1/N)>
+            matrix[3][2] = matrix[3][2]/matrix[3][3];
+            //Assigning R3 & C3 to 1 because become 1 anyhow with division, so we make it constant for simplify
+            matrix[3][3] = 1;
+        } //outer if
+    }
 
 }
