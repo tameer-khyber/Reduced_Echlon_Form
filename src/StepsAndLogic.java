@@ -406,6 +406,30 @@ public class StepsAndLogic {
             }
         }
     }
+    //     -----Logic For the Simplified values of <<X Y Z>>-----
+    static void logic_and_Displaying_the_values_of_X_Y_Z(double[][] matrix){
+        //Logic For the value of Z
+        int constant_side = (int) matrix[3][4];
+        int x = (int) matrix[3][1];
+        int y = (int) matrix[3][2];
+        int value_of_Z = (int) (constant_side - (matrix[3][2] * x) - (matrix[3][2] * y));
+
+        //Logic For the value of Y
+        constant_side = (int) matrix[2][4];
+        x = (int) matrix[2][1];
+        int value_of_Y = (int) (constant_side - (matrix[2][1] * x) - (matrix[2][3] * value_of_Z));
+
+
+        //Logic For the value of X
+        constant_side = (int) matrix[1][4];
+        int value_of_X = (int) (constant_side - (matrix[1][2] * value_of_Y) - (matrix[1][3] * value_of_Z));
+
+        System.out.print("Value of X = " + value_of_X + "\n");
+        System.out.print("Value of Y = " + value_of_Y + "\n");
+        System.out.print("Value of Z = " + value_of_Z + "\n\n");
+
+
+    }
 
 
 }
