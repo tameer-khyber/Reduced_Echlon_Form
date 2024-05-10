@@ -243,7 +243,51 @@ public class StepsAndLogic {
                 matrix[2][j] /= divisor; // Divide each element by divisor
             }
         }
-
+    }
+    static void replace_3rdRow_and_2nd_Column_by_0(double[][] matrix, int row, int column){
+        /* Checking the R2's 1st element is not 0 and its negative
+         * then we're applying the multiplication method
+         * The Logic is Like that (R2 + NR1) where N is any constant
+         * of R2's 1st Element <<(It is Only Working For Negative)>>   */
+        if(matrix[3][2]!=0){ //checking R3's 2nd Element is not 0
+            if(matrix[3][2] < 0){ //checking R3's 2nd Element is negative
+                for (int i = 1; i < row; i++) {
+                    for (int j = 1; j < column; j++) {
+                        //Assigning R3 - NR3 * R2 to temp variable bcz of 0
+                        int temp = (int) (matrix[3][1] - (matrix[3][2] * matrix[2][1]));
+                        //Assigning R3 - NR3 * R2 to temp2 variable bcz of 0
+                        int temp2 = (int) (matrix[3][2] - (matrix[3][2] * matrix[2][2]));
+                        //Assigning R3 - NR3 * R2 to (R2 & C3)
+                        matrix[3][3] = matrix[3][3] - (matrix[3][2] * matrix[2][3]);
+                        //Assigning R3 - NR3 * R3 to (R2 & C4)
+                        matrix[3][4] = matrix[3][4] - (matrix[3][2] * matrix[2][4]);
+                        //Assigning Temp variable value to (R3 & C1)
+                        matrix[3][1] = temp;
+                        //Assigning Temp variable value to (R3 & C2)
+                        matrix[3][2] = temp2;
+                    } //inner for
+                } //outer for
+            } //inner if
+        } //outer if
+        //  <<(It is Only Working For Positive)>>
+        if(matrix[3][2]!=0){ //checking R3's 2nd Element is not 0
+            for (int i = 1; i < row; i++) {
+                for (int j = 1; j < column; j++) {
+                    //Assigning R3 - NR3 * R2 to temp variable bcz of 0
+                    int temp = (int) (matrix[3][1] - (matrix[3][2] * matrix[2][1]));
+                    //Assigning R3 - NR3 * R2 to temp2 variable bcz of 0
+                    int temp2 = (int) (matrix[3][2] - (matrix[3][2] * matrix[2][2]));
+                    //Assigning R3 - NR3 * R2 to (R2 & C3)
+                    matrix[3][3] = matrix[3][3] - (matrix[3][2] * matrix[2][3]);
+                    //Assigning R3 - NR3 * R3 to (R2 & C4)
+                    matrix[3][4] = matrix[3][4] - (matrix[3][2] * matrix[2][4]);
+                    //Assigning Temp variable value to (R3 & C1)
+                    matrix[3][1] = temp;
+                    //Assigning Temp variable value to (R3 & C2)
+                    matrix[3][2] = temp2;
+                } //inner for
+            } //outer for
+        } //outer if
     }
 
 }
