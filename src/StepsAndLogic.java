@@ -346,6 +346,36 @@ public class StepsAndLogic {
                 matrix[2][4] = temp4;
             } // inner if
         } //outer if
-
     }
+
+    static void changingIn_R1AndC3_For_Neg_Pos(double[][] matrix) {
+        // R1 + 2R3 (WORKING) FOR -ve
+        if (matrix[1][3] != 0) {
+            if (matrix[1][3] < 0) {
+                int temp = (int) (matrix[1][1] - (matrix[1][3] * matrix[3][1]));
+                int temp2 = (int) (matrix[1][2] - (matrix[1][3] * matrix[3][2]));
+                int temp3 = (int) (matrix[1][3] - (matrix[1][3] * matrix[3][3]));
+                int temp4 = (int) (matrix[1][4] - (matrix[1][3] * matrix[3][4]));
+                matrix[1][1] = temp;
+                matrix[1][2] = temp2;
+                matrix[1][3] = temp3;
+                matrix[1][4] = temp4;
+            } // inner if
+        } // outer if
+
+        // R1 + 2R3 (WORKING) FOR +ve
+        if (matrix[1][3] != 0) {
+            if (matrix[1][3] > 0) {
+                int temp = (int) (matrix[1][1] - (matrix[1][3] * matrix[3][1]));
+                int temp2 = (int) (matrix[1][2] - (matrix[1][3] * matrix[3][2]));
+                int temp3 = (int) (matrix[1][3] - (matrix[1][3] * matrix[3][3]));
+                int temp4 = (int) (matrix[1][4] - (matrix[1][3] * matrix[3][4]));
+                matrix[1][1] = temp;
+                matrix[1][2] = temp2;
+                matrix[1][3] = temp3;
+                matrix[1][4] = temp4;
+            } // inner if
+        }// outer if
+    }
+
 }
