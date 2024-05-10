@@ -22,7 +22,33 @@ public class StepsAndLogic {
                 } //outer for
             } // inner if
         } //outer if
-    }    static void if_R1_1st_Element_is_Neg(double[][] matrix, int row, int column){
+
+    }
+    static void interchange_R1_and_R3(double[][] matrix, int row, int column){
+        //Step-2
+        /* checking if  R1 & C1's 1st element is Not 1
+         * and the R2 & C1's 1st element is also not 1
+         * then we check if R3 & C1 1st element is 1 then
+         * We're interchanging the R3 to R1 means R1's
+         * All elements replace with R3's all elements
+         * and R3's all elements replace with R1's all elements */
+        if(matrix[1][1] !=1){ //checking R1's 1st Element is not = 1
+            if (matrix[3][1] == 1){ // checking R3's 1st Element is = 1
+                int[][] temp = new int[row][column];
+                for (int i =1; i < row; i++){
+                    for (int j =1; j < column; j++){  //where N= the number Columns 1st col then 2nd...
+                        temp[i][j] = (int) matrix[1][j];   //Assigning R1 & CN value to temp array
+                        matrix[1][j] = matrix[3][j]; // Assigning R2 & CN value to R1 & C1
+                        matrix[3][j] = temp[i][j];   // Assigning Temp array values to R2 & CN
+                        /*Note Temp array now have R1 & CN values because we are first assigning
+                          the R1 & CN values to temp array */
+                    } //inner for
+                } //outer for
+            } // inner if
+        } //outer if
+    }
+
+    static void if_R1_1st_Element_is_Neg(double[][] matrix, int row, int column){
         /* Checking the R1's 1st Element is Negative if it is negative then
          * we have to multiply the whole row with (-1)
          * The Logic is like this -- R1 (R1 x -1)                     */
