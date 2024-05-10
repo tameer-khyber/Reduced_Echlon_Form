@@ -219,5 +219,31 @@ public class StepsAndLogic {
             } //outer for
         } //outer if
     }
+    static void if_R2_and_C2_1st_Element_is_Zero_0(double[][] matrix){
+        /* Checking the R2's First Element is 0 if it is
+         * then we are add +1 to whole Row */
+        if (matrix[2][2] == 0) { //checking the R2's 1st Element is 0
+            //if its 0 then we are adding +1 in R2 CN
+            matrix[2][2] = matrix[2][2] + 1;
+            matrix[2][3] = matrix[2][3] + 1;
+            matrix[2][4] = matrix[2][4] + 1;
+        } //outer if
+    }
+    static void if_R2_and_C2_1st_Element_is_Pos_But_Not_1(double[][] matrix, int column) {
+        //Step-3
+        /* Checking If (R2's -- 1st Element is not 1, and it's greater than 0)
+         * means R2's 1st element is not a negative number then we perform the
+         * Elementary Row operations. Here we Divide the R2's -- 1st element to
+         * with complete R2 The logic is like this.
+         * (R2 (1/N) where N = The element that you want to change.In our case
+         * N = R2 & C2 means R2's 1st element because we want R2 & C2 1st Element as 1 */
+        if (matrix[2][2] != 0 && matrix[2][2] != 1) { // checking R2's 1st element is not equal to 0 or 1
+            double divisor = matrix[2][2]; // Store the value of matrix[2][2] as divisor
+            for (int j = 1; j < column; j++) {
+                matrix[2][j] /= divisor; // Divide each element by divisor
+            }
+        }
+
+    }
 
 }
