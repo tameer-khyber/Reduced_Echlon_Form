@@ -133,6 +133,52 @@ public class StepsAndLogic {
             } //outer for
         } //outer if
     }
+
+
+    static void replace_3rdRow_and_1st_Column_by_0(double[][] matrix, int row, int column){
+        /* Checking the R3's 1st element is not 0 and its negative
+         * then we're applying the multiplication method
+         * The Logic is Like that (R3 + NR1) where N is any constant
+         * of R3's 1st Element <<(It is Only Working For Negative)>>   */
+        if(matrix[3][1]!=0){ //checking R3's 1st Element is not 0
+            if(matrix[3][1] < 0){ //checking R3's 1st Element is negative
+                for (int i = 1; i < row; i++) {
+                    for (int j = 1; j < column; j++) {
+                        //Assigning R3 - NR3 * R1 to temp variable
+                        int temp = (int) (matrix[3][1] - (matrix[3][1] * matrix[1][1]));
+                        //Assigning R3 - NR3 * R1 to (R3 & C2)
+                        matrix[3][2] = matrix[3][2] - (matrix[3][1] * matrix[1][2]);
+                        //Assigning R3 - NR3 * R1 to (R3 & C3)
+                        matrix[3][3] = matrix[3][3] - (matrix[3][1] * matrix[1][3]);
+                        //Assigning R3 - NR3 * R1 to (R3 & C4)
+                        matrix[3][4] = matrix[3][4] - (matrix[3][1] * matrix[1][4]);
+                        //Assigning Temp variable value to (R3 & C1)
+                        matrix[3][1] = temp;
+                    } //inner for
+                } //outer for
+            } //inner if
+        } //outer if
+
+        // <<(It is Only Working For Positive)>>
+        if(matrix[3][1]!=0){ //checking R3's 1st Element is not 0
+            for (int i = 1; i < row; i++) {
+                for (int j = 1; j < column; j++) {
+                    //Assigning R3 - NR3 * R1 to temp variable
+                    int temp = (int) (matrix[3][1] - (matrix[3][1] * matrix[1][1]));
+                    //Assigning R3 - NR3 * R1 to (R3 & C2)
+                    matrix[3][2] = matrix[3][2] - (matrix[3][1] * matrix[1][2]);
+                    //Assigning R3 - NR3 * R1 to (R3 & C3)
+                    matrix[3][3] = matrix[3][3] - (matrix[3][1] * matrix[1][3]);
+                    //Assigning R3 - NR3 * R1 to (R3 & C4)
+                    matrix[3][4] = matrix[3][4] - (matrix[3][1] * matrix[1][4]);
+                    //Assigning Temp variable value to (R3 & C1)
+                    matrix[3][1] = temp;
+                } //inner for
+            } //outer for
+        } //outer if
+
+    }
+
     //     -----This Whole Logic is only for Making the 1 in R2 & C2-----
 
     static void interchange_R2_and_C2_by_R3_if_R3_have_1(double[][] matrix, int row, int column){
