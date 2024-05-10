@@ -304,5 +304,48 @@ public class StepsAndLogic {
             matrix[3][3] = 1;
         } //outer if
     }
+    static void  changingIn_R2AndC3_For_Neg_Pos(double [][] matrix){
+        //R2 + 2R3 (WORKING) FOR +ve
+        if (matrix[2][3]<0){
 
+            int temp1 = (int) (matrix[2][1]-(matrix[2][3]*matrix[3][1]));
+            int temp2 = (int) (matrix[2][2]-(matrix[2][3]*matrix[3][2]));
+            int temp3 = (int) (matrix[2][3]-(matrix[2][3]*matrix[3][3]));
+            int temp4 = (int) (matrix[2][4]-(matrix[2][3]*matrix[3][4]));
+            matrix[2][1]= temp1;
+            matrix[2][2]=temp2;
+            matrix[2][3]=temp3;
+            matrix[2][4]=temp4;
+        }// outer if
+
+        //R2 + 2R3 (WORKING) FOR -ve
+        if (matrix[2][3] !=0){
+            if (matrix[2][3]<0){
+                int temp = (int) (matrix[2][1]-(matrix[2][3]*matrix[3][1]));
+                int temp2 = (int) (matrix[2][2]-(matrix[2][3]*matrix[3][2]));
+                int temp3 = (int) (matrix[2][3]-(matrix[2][3]*matrix[3][3]));
+                int temp4 = (int) (matrix[2][4]-(matrix[2][3]*matrix[3][4]));
+                matrix[2][1]= temp;
+                matrix[2][2] = temp2;
+                matrix[2][3] = temp3;
+                matrix[2][4] = temp4;
+            } //inner if
+        } //outer if
+
+        //R2 + 2R3 (WORKING) FOR +ve
+        if (matrix[2][3] !=0){
+            if (matrix[2][3]>0){
+
+                int temp = (int) (matrix[2][1]-(matrix[2][3]*matrix[3][1]));
+                int temp2 = (int) (matrix[2][2]-(matrix[2][3]*matrix[3][2]));
+                int temp3 = (int) (matrix[2][3]-(matrix[2][3]*matrix[3][3]));
+                int temp4 = (int) (matrix[2][4]-(matrix[2][3]*matrix[3][4]));
+                matrix[2][1]= temp;
+                matrix[2][2] = temp2;
+                matrix[2][3] = temp3;
+                matrix[2][4] = temp4;
+            } // inner if
+        } //outer if
+
+    }
 }
