@@ -427,9 +427,5 @@ public class StepsAndLogic {
         System.out.print("Value of X = " + value_of_X + "\n");
         System.out.print("Value of Y = " + value_of_Y + "\n");
         System.out.print("Value of Z = " + value_of_Z + "\n\n");
-
-
     }
-
-
 }
