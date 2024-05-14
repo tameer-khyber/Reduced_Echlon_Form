@@ -20,3 +20,17 @@ Zero out the column: Use row operations to create zeroes in all other entries of
 Repeat for remaining rows: Move to the next row and column, and repeat the process until the entire matrix is in reduced echelon form.
 
 <h4>A = [ 2  1 -1  8     -3 -1  2 -11     -2  1  2 -3 ]</h4>
+Step-by-step transformation to Reduced Echelon Form:
+
+<h4>Create a leading 1 in the first column:</h4>
+(1/2)R1 -> R1
+R1 = [ 1  0.5 -0.5  4 ]
+<h4>Eliminate the first column in the other rows:</h4>
+R2 + 3R1 -> R2
+R2 = [ 0  0.5  0.5  1 ]
+
+R3 + 2R1 -> R3
+R3 = [ 0  2  1  5 ]
+<h4>Create a leading 1 in the second row:</h4>
+(1/0.5)R2 -> R2
+R2 = [ 0  1  1  2 ]
