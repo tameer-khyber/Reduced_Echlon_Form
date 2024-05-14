@@ -62,3 +62,76 @@ Reduced Echelon Form is particularly useful for:
 => Determining the rank of a matrix.<br>
 => Finding the inverse of an invertible matrix. <br>
 => Identifying free variables and pivot variables in a system of linear equations.
+
+<h2>Functions and Implementations</h2>
+Here is a simple implementation in Java:
+
+import java.util.Arrays;
+
+public class MatrixUtils {
+
+    public static void toReducedRowEchelonForm(double[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        int lead = 0;
+        for (int r = 0; r < rows; r++) {
+            if (lead >= cols) {
+                return;
+            }
+            int i = r;
+            while (matrix[i][lead] == 0) {
+                i++;
+                if (i == rows) {
+                    i = r;
+                    lead++;
+                    if (cols == lead) {
+                        return;
+                    }
+                }
+            }
+            double[] temp = matrix[r];
+            matrix[r] = matrix[i];
+            matrix[i] = temp;
+
+            double lv = matrix[r][lead];
+            for (int j = 0; j < cols; j++) {
+                matrix[r][j] /= lv;
+            }
+
+            for (i = 0; i < rows; i++) {
+                if (i != r) {
+                    lv = matrix[i][lead];
+                    for (int j = 0; j < cols; j++) {
+                        matrix[i][j] -= lv * matrix[r][j];
+                    }
+                }
+            }
+            lead++;
+        }
+    }
+
+    public static void printMatrix(double[][] matrix) {
+        for (double[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+
+    public static void main(String[] args) {
+        double[][] matrix = {
+            {2, 1, -1, 8},
+            {-3, -1, 2, -11},
+            {-2, 1, 2, -3}
+        };
+
+        System.out.println("Original Matrix:");
+        printMatrix(matrix);
+
+        toReducedRowEchelonForm(matrix);
+
+        System.out.println("\nReduced Row Echelon Form:");
+        printMatrix(matrix);
+    } }
+
+<h2>Conclusion</h2>
+Understanding and being able to convert matrices to Reduced Echelon Form is a fundamental skill in linear algebra. It simplifies complex problems and provides a clear method for solving systems of linear equations and analyzing matrix properties.
