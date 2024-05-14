@@ -54,3 +54,11 @@ R2 - R3 -> R2
 R2 = [ 0  1  0  3 ]
 The matrix in Reduced Echelon Form is:
 REF(A) = [ 1  0  0  2           0  1  0  3           0  0  1 -1 ]
+
+<h2>Usage</h2>
+Reduced Echelon Form is particularly useful for:
+
+=> Solving systems of linear equations. <br>
+=> Determining the rank of a matrix.<br>
+=> Finding the inverse of an invertible matrix. <br>
+=> Identifying free variables and pivot variables in a system of linear equations.
