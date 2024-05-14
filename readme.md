@@ -34,3 +34,23 @@ R3 = [ 0  2  1  5 ]
 <h4>Create a leading 1 in the second row:</h4>
 (1/0.5)R2 -> R2
 R2 = [ 0  1  1  2 ]
+
+<h4>Eliminate the second column in the other rows:</h4>
+R1 - 0.5R2 -> R1
+R1 = [ 1  0 -1  3 ]
+
+R3 - 2R2 -> R3
+R3 = [ 0  0 -1  1 ]
+
+<h4>Create a leading 1 in the third row:</h4>
+(-1)R3 -> R3
+R3 = [ 0  0  1 -1 ]
+
+<h4>Eliminate the third column in the other rows:</h4>
+R1 + R3 -> R1
+R1 = [ 1  0  0  2 ]
+
+R2 - R3 -> R2
+R2 = [ 0  1  0  3 ]
+The matrix in Reduced Echelon Form is:
+REF(A) = [ 1  0  0  2           0  1  0  3           0  0  1 -1 ]
