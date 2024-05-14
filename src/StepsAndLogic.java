@@ -424,8 +424,8 @@ public class StepsAndLogic {
         constant_side = (int) matrix[1][4];
         int value_of_X = (int) (constant_side - (matrix[1][2] * value_of_Y) - (matrix[1][3] * value_of_Z));
 
-        System.out.print("Value of X = " + value_of_X + "\n");
-        System.out.print("Value of Y = " + value_of_Y + "\n");
-        System.out.print("Value of Z = " + value_of_Z + "\n\n");
+        System.out.print("The Value of X = " + value_of_X + "\n");
+        System.out.print("The Value of Y = " + value_of_Y + "\n");
+        System.out.print("The Value of Z = " + value_of_Z + "\n\n");
     }
 }
